@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "q7ixxcMqtrVQaGPiWHqdR6Pv26by2jiiVa7DbRLe53BLQ+Am2WojY4vyypS6Rsw4hA0Q/Id6zhOuHLe9hs119A==",
+  "dgSpecHash": "GqFlCvqSdVUflAlc9GzfWQkYKVjnr0dwS0ORW1jtFghdhmPxddqxyPFZgK/CfutOyAZuSMAO5I9y5PY1l062fg==",
   "success": true,
   "projectFilePath": "C:\\Users\\islam\\Desktop\\codes\\C#\\brick-game\\raylib game.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\islam\\.nuget\\packages\\microsoft.toolkit.highperformance\\7.1.2\\microsoft.toolkit.highperformance.7.1.2.nupkg.sha512",
     "C:\\Users\\islam\\.nuget\\packages\\raylib-cs\\6.1.1\\raylib-cs.6.1.1.nupkg.sha512",
+    "C:\\Users\\islam\\.nuget\\packages\\raylib-cslo\\4.2.0.9\\raylib-cslo.4.2.0.9.nupkg.sha512",
     "C:\\Users\\islam\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []

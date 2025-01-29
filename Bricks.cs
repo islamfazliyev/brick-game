@@ -1,5 +1,5 @@
 using System.Numerics;
-using Raylib_cs;
+using Raylib_CsLo;
 
 namespace Bricks
 {
@@ -10,13 +10,13 @@ namespace Bricks
         public Rectangle Rect { get; private set; }
         public bool IsVisible { get; set; } = true;
 
-        private Texture2D texture;
+        private Texture texture;
         private int x;
         private int y;
         private int width;
         private int height;
 
-        public Brick(int x, int y, int width, int height, Texture2D texture)
+        public Brick(int x, int y, int width, int height, Texture texture)
         {
             this.x = x;
             this.y = y;
@@ -35,11 +35,11 @@ namespace Bricks
                 // Scale the texture to fit the brick
                 Raylib.DrawTexturePro(
                     texture,
-                    new Rectangle(0, 0, texture.Width, texture.Height), // Full texture
+                    new Rectangle(0, 0, texture.width, texture.height), // Full texture
                     Rect, // Destination rectangle
                     new Vector2(0, 0), // No rotation origin
                     0f, // No rotation
-                    Color.White // Default color
+                    Raylib.WHITE // Default color
                 );
             }
         }
@@ -48,7 +48,7 @@ namespace Bricks
     public class Bricks
     {
         public List<Brick> BrickList { get; private set; } = new List<Brick>();
-        private Texture2D brickTexture;
+        private Texture brickTexture;
 
         public Bricks()
         {
@@ -68,6 +68,27 @@ namespace Bricks
                     
                     BrickList.Add(new Brick(x, y, brickWidth, brickHeight, brickTexture));
                 }
+            }
+        }
+
+        public void Add(int x, int y)
+        {
+            int gridX = (x/50) * 50;
+            int gridY = (y/50) * 50;
+
+            bool exists = BrickList.Any(b => b.Rect.x == gridX && b.Rect.y == gridY);
+            if (!exists)
+            {
+                BrickList.Add(new Brick(gridX, gridY, 100, 20, brickTexture));
+            }
+        }
+
+        public void Remove()
+        {
+            var brickToRemove = BrickList.FirstOrDefault(b => Raylib.CheckCollisionPointRec(Raylib.GetMousePosition(), b.Rect));
+            if (brickToRemove != null)
+            {
+                BrickList.Remove(brickToRemove);
             }
         }
 

@@ -31,7 +31,7 @@ namespace Player
             }
             if (x + width >= Raylib.GetScreenWidth())
             {
-                x = Raylib.GetScreenHeight() - 100;
+                x = Raylib.GetScreenWidth() - 100;
             }
         }
     }
